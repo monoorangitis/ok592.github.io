@@ -1,0 +1,78 @@
+/**
+ * Stylesheet.css
+ *
+ * @author Elias Marold, 01425778
+ */
+
+body {
+    font: 12px sans-serif;
+}
+
+h1 {
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-size: 3em;
+    margin-top: 1em;
+    line-height: 0em;
+    font-weight: lighter;
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: lighter;
+    text-align: center;
+    color: lightgrey;
+}
+
+#pc {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 15%;
+    margin: 0 0 0 -500px;
+}
+
+g {
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1em;
+    color: green;
+}
+
+.polyline path {
+    fill: none;
+    stroke: black;
+}
+
+div.tooltip {
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1.5em;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8em;
+    height: 2em;
+    background: lightsteelblue;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.axis line,
+.axis path {
+    fill: none;
+    stroke: lightgray;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    fill: grey;
+}
+
+fieldset {
+    border-width: 0;
+}
