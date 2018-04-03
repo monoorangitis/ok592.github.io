@@ -1,14 +1,14 @@
-Name,               Cost (in ¢ per cal),   Calories (per 100g), Sugar (g per 100g)
-Beverages,          0.2,        43,             8.9
-Snacks,             0.4,        446,            25.4
-Dairy,              0.5,        185,            5.7
-Juice,              0.7,        33,             7.7
-Cereal,             0.4,        344,            26
-Frozen Foods,       0.7,        167,            55
-Canned Goods,       0.5,        196,            0.5
-Meat,               0.5,        214,            32
-Pasta,              0.3,        334,            9.8
-Baking,             0.5,        240,            22.9
-Bread,              0.5,        246,            6.1
-Produce,            2,          38,             4.8
-Refrigerated items, 0.5,        201,            13.5
+Name,               Cost (in ¢ per cal),    Calories (per 100g),    Sugar (in g per 100g)
+Beverages,          0.2,                    43,                     8.9
+Snacks,             0.4,                    446,                    25.4
+Dairy,              0.5,                    185,                    5.7
+Juice,              0.7,                    33,                     7.7
+Cereal,             0.4,                    344,                    26
+Frozen Foods,       0.7,                    167,                    55
+Canned Goods,       0.5,                    196,                    0.5
+Meat,               0.5,                    214,                    32
+Pasta,              0.3,                    334,                    9.8
+Baking,             0.5,                    240,                    22.9
+Bread,              0.5,                    246,                    6.1
+Produce,            2,                      38,                     4.8
+Refrigerated items, 0.5,                    201,                    13.5
