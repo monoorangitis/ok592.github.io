@@ -1,4 +1,4 @@
-Name,               Cost (¢),   Calories (cal), Sugar (g)
+Name,               Cost (in ¢ per cal),   Calories (per 100g), Sugar (g per 100g)
 Beverages,          0.2,        43,             8.9
 Snacks,             0.4,        446,            25.4
 Dairy,              0.5,        185,            5.7
