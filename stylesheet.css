@@ -28,11 +28,33 @@ h2 {
 }
 
 #pc {
+    position: relative;
+    float: left;
+}
+
+#root {
     position: absolute;
+    width: 1100px;
+    height: 500px;
     left: 50%;
     right: 50%;
     top: 15%;
-    margin: 0 0 0 -500px;
+    margin: 0 0 0 -550px;
+}
+
+#names_div {
+    position: relative;
+    float: right;
+    width: 100px;
+    height: 500px;
+ }
+
+#placeholder {
+    position: relative;
+    float: right;
+    float: top;
+    width: 100px;
+    height: 20px;
 }
 
 g {
@@ -60,6 +82,32 @@ div.tooltip {
     background: lightsteelblue;
     opacity: 1;
     pointer-events: none;
+}
+
+.names {
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1em;
+    margin-top: 0.2em;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu {
+    position: absolute;
+    width: 300px;
+    top: 85%;
+    left: 50%;
+    margin: 0 0 0 -150px;
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1em;
+}
+
+.select {
+    width: 50px;
 }
 
 .axis line,

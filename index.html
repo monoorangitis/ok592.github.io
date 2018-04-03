@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="shortcut icon" type="image/x-icon" href="/icon.ico">
     <title>InfoVis 2018S</title>
@@ -17,7 +18,22 @@
 <h1>Informationsdesign und Visualisierung 2018S</h1>
 <h2>Exercise 1 – Group 11</h2>
 
-<div id="pc"></div>
+<div id="root">
+    <div id="pc"></div>
+    <div id="placeholder"></div>
+    <div id="names_div"></div>
+</div>
+
+<div id="menu">
+    <form action="#">
+        <fieldset>
+            <label for="Mode">Mode: </label>
+            <select name="Mode" id="Mode">
+            </select>
+        </fieldset>
+    </form>
+
+</div>
 
 <!-- call parallel coordinates script -->
 <script type="text/javascript" src="parallelCoordinates.js"></script>
