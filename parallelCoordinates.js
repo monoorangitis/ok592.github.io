@@ -1,7 +1,7 @@
 // define size plots
 var margin = {top: 20, right: 20, bottom: 20, left: 50},
     widthPC = 1000,
-    height = 600;
+    height = 800;
 
 // parallel coordinates SVG container...
 var svgPC = d3.select("#pc").append("svg")
@@ -157,17 +157,20 @@ d3.csv("infoVis.csv", function (csvData) {
         if(readMenu() === ("Interactive")){
             // remove descriptions
             d3.select("#names_div").style("opacity", "0");
+            d3.select("#table_div").style("opacity", "0");
 
             polylines.style("stroke", "black").style("stroke-width", "1");
 
         } else if(readMenu() === ("Static")){
             // add descriptions
             d3.select("#names_div").style("opacity", "1");
+            d3.select("#table_div").style("opacity", "1");
 
             i = 0;
             polylines.style("stroke-width", "2")
                 .style("stroke", function() {
                 return google_colors(i)});
+
         }
 
     }
@@ -180,15 +183,70 @@ d3.csv("infoVis.csv", function (csvData) {
             $( "select#Mode").append("<option>"+d+"</option>");
         });
 
-        $( "#Mode" ).selectmenu({
-            select: function() {
+        $( "#Mode" ).change(function () {
                 render();
-            }
-        });
+            });
     }
 
     // read current scatterplot parameters
     function readMenu(){
         return $( "#Mode").val();
     }
+});
+
+d3.csv("infoVisT.csv", function (csvData) {
+//-------------------------------------------------- table -------------------------------------------------------//
+    // credit for this code to: http://bl.ocks.org/jfreels/6814721
+    data = csvData;
+
+    i = 0;
+    function google_colors(d) {
+        i += 1;
+        var google_cols = ["#000000", "#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477", "#66aa00", "#b82e2e", "#316395", "#994499", "#22aa99", "#aaaa11", "#6633cc", "#e67300", "#8b0707", "#651067", "#329262", "#5574a6", "#3b3eac"];
+        return google_cols[d % google_cols.length];
+    }
+
+    function tabulate(data, columns) {
+
+        i = 0;
+
+        var table = d3.select("#table_div").append("table"),
+            thead = table.append("thead"),
+            tbody = table.append("tbody");
+
+        // append the header row
+        thead.append("tr")
+            .selectAll("th")
+            .data(columns)
+            .enter()
+            .append("th")
+            .style("background-color", function() {
+                return google_colors(i)})
+            .text(function (column) {
+                return column;
+            });
+        // create a row for each object in the data
+        var rows = tbody.selectAll("tr")
+            .data(data)
+            .enter()
+            .append("tr");
+        // create a cell in each row for each column
+        var cells = rows.selectAll("td")
+            .data(function (row) {
+                return columns.map(function (column) {
+                    return {column: column, value: row[column]};
+                });
+            })
+            .enter()
+            .append("td")
+            .html(function (d) {
+                return d.value;
+            });
+
+        return table;
+    }
+
+    var columns = ["Name","Baking","Beverages","Bread","Canned Goods","Cereal","Dairy","Frozen Foods","Juice","Meat","Pasta","Produce","Refrigerated items","Snacks"];
+    table = tabulate (data,columns);
+
 });

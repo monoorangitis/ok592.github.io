@@ -29,31 +29,39 @@ h2 {
 
 #pc {
     position: relative;
-    float: left;
 }
 
 #root {
     position: absolute;
-    width: 1100px;
-    height: 500px;
+    width: 1000px;
+    height: 1000px;
     left: 50%;
     right: 50%;
     top: 15%;
-    margin: 0 0 0 -550px;
+    margin: 0 0 0 -500px;
 }
 
-#names_div {
+#table_div {
     position: relative;
-    float: right;
-    width: 100px;
-    height: 500px;
+    float: bottom;
+    width: 1000px;
+    height: 300px;
  }
 
-#placeholder {
-    position: relative;
-    float: top;
-    width: 100px;
-    height: 20px;
+table {
+    color: black;
+    font-size: 1.5em;
+}
+
+th {
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-weight: lighter;
+}
+
+td {
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-weight: lighter;
 }
 
 g {
@@ -96,9 +104,12 @@ div.tooltip {
 }
 
 #menu {
-    position: relative;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+    padding-right: 1em;
+    padding-bottom: 1em;
     width: 100px;
-    float: right;
     font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
     font-weight: lighter;
     font-size: 1em;
@@ -108,8 +119,9 @@ div.tooltip {
     width: 100px;
 }
 
-.fieldset {
-    width: 100px;
+.fieldset-auto-width {
+    display: inline;
+    float: right;
 }
 
 .form {
