@@ -1,7 +1,7 @@
 // define size plots
 var margin = {top: 20, right: 20, bottom: 20, left: 50},
     widthPC = 1000,
-    height = 500;
+    height = 600;
 
 // parallel coordinates SVG container...
 var svgPC = d3.select("#pc").append("svg")

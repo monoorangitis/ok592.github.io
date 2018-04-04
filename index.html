@@ -11,7 +11,7 @@
 
 <!-- include d3 and jQueryUI -->
 <script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <!-- headings -->
@@ -22,18 +22,19 @@
     <div id="pc"></div>
     <div id="placeholder"></div>
     <div id="names_div"></div>
+    <div id="menu" width="100px" style="width: 100px">
+        <form action="#" style="width: 100px">
+            <fieldset>
+                <label for="Mode" style="width: 100px">Mode: </label>
+                <select name="Mode" id="Mode" style="width: 100px">
+                </select>
+            </fieldset>
+        </form>
+
+    </div>
 </div>
 
-<div id="menu">
-    <form action="#">
-        <fieldset>
-            <label for="Mode">Mode: </label>
-            <select name="Mode" id="Mode">
-            </select>
-        </fieldset>
-    </form>
 
-</div>
 
 <!-- call parallel coordinates script -->
 <script type="text/javascript" src="parallelCoordinates.js"></script>
