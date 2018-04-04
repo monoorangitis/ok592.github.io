@@ -35,6 +35,7 @@ d3.csv("infoVis.csv", function (csvData) {
 
     var lineGenerator = d3.line(); // line used to draw the path for polylines
     var tooltip;                   // the tooltip-div, that is shown on mouseover
+    var infoBox;
     var highlighted;               // the highlighted element on mouseover
 
     // x and y scaling for parallel coordinates
@@ -86,13 +87,28 @@ d3.csv("infoVis.csv", function (csvData) {
 
                 highlighted = d; // store back highlighted element
                 oldColor = d3.select(this).style("stroke"); // store back highlighted element's color
+                a = highlighted.value;
                 d3.select(this).style("stroke", "lightsteelblue"); // highlight line: color it and increase the stroke-width
                 d3.select(this).style("stroke-width", "5");
+
+                /*
+                infoBox = d3.select("body").append("div") // set the div, see {@link stylesheet.css} for details
+                    .attr("id", "infoBox")
+                    .attr("class", "infoBox");
+                infoBox.html("Cost: " + d["Cost (in ¢ per cal)"] + "\n"
+                    + "Cal: " +  d["Calories (per 100 g)"] + "\n"
+                    + "Sugar: " + d["Sugar (in g per 100 g)"]) // show the name on mouseover (accounts for all naming-schemes), add x and y offset
+                    .style("right", 5 + "%")
+                    .style("top", 10 + "%");
+                */
 
                 tooltip = d3.select("body").append("div") // set the div, see {@link stylesheet.css} for details
                     .attr("id", "tooltip")
                     .attr("class", "tooltip");
-                tooltip.html(d.Name) // show the name on mouseover (accounts for all naming-schemes), add x and y offset
+                tooltip.html(d["Name"]
+                + ":\nCost: " + d["Cost (in ¢ per cal)"]
+                + "¢\nCal: " +  d["Calories (per 100 g)"]
+                + "cal\nSugar: " + d["Sugar (in g per 100 g)"] +"g") // show the name on mouseover (accounts for all naming-schemes), add x and y offset
                     .style("left", (d3.event.pageX) + "px")
                     .style("top", (d3.event.pageY - 10) + "px");
             }
@@ -139,18 +155,6 @@ d3.csv("infoVis.csv", function (csvData) {
         var heights = [40, 80, 120, 160, 200, 240, 280, 320, 360, 400, 440, 480, 520];
         return (heights[d % heights.length]) + "px";
     }
-
-    names_divs = d3.select("#names_div")
-        .selectAll("div")
-        .data(data).enter()
-        .append("div")
-        .style("width", "100px")
-        .style("height", "30px")
-        .style("top", function() {
-            return pos(j)})
-        .style("background",function() {return google_colors(i);})
-        .attr("class", "names")
-        .html(function (d) { return d.Name;});
 
     function render() {
 

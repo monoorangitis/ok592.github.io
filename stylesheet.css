@@ -44,24 +44,30 @@ h2 {
 #table_div {
     position: relative;
     float: bottom;
-    width: 1000px;
+    width: 1500px;
     height: 300px;
  }
 
 table {
     color: black;
+    border: 1px solid black;
+    border-collapse: collapse;
     font-size: 1.5em;
 }
 
 th {
     color: white;
+    border: 1px solid black;
     font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
     font-weight: lighter;
+    font-size: 1em;
 }
 
 td {
+    border: 1px solid black;
     font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
     font-weight: lighter;
+    font-size: 1em;
 }
 
 g {
@@ -82,11 +88,30 @@ div.tooltip {
     font-size: 1.5em;
     position: absolute;
     display: flex;
+    white-space: pre;
     justify-content: center;
     align-items: center;
+    color: white;
     width: 8em;
-    height: 2em;
+    height: 7em;
     background: lightsteelblue;
+    opacity: 1;
+    pointer-events: none;
+}
+
+div.infoBox {
+    font-family: "Helvetica Neue", Helvetica, "Arial", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1.5em;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    white-space: pre;
+    align-items: center;
+    width: 8em;
+    height: 6em;
+    background: black;
+    color: white;
     opacity: 1;
     pointer-events: none;
 }
