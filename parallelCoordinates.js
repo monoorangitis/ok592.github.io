@@ -171,7 +171,7 @@ d3.csv("infoVis.csv", function (csvData) {
             d3.select("#table_div").style("opacity", "1");
 
             i = 0;
-            polylines.style("stroke-width", "2")
+            polylines.style("stroke-width", "3")
                 .style("stroke", function() {
                 return google_colors(i)});
 
