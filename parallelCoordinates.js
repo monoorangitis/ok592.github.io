@@ -78,7 +78,7 @@ d3.csv("infoVis.csv", function (csvData) {
         .data(data)
         .enter().append("path")
         .attr("d", path)
-        .style("stroke-width", "2")
+        .style("stroke-width", "3")
         .style("stroke", function() {
             return google_colors(i)})
         // add tooltip action!
